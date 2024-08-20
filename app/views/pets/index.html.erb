@@ -1,0 +1,7 @@
+<h1>All Lost Pets</h1>
+<%= link_to 'Add a new pet', new_pet_path, class: 'btn btn-primary mb-3' %>
+<ul>
+  <% @pets.each do |pet| %>
+    <li><%= link_to pet.name, pet_path(pet) %> - found <%= pluralize(pet.found_days_ago, 'day') %> ago</li>
+  <% end %>
+</ul>

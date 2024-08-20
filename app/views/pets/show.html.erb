@@ -1,0 +1,8 @@
+<h1><%= @pet.name %></h1>
+<p>Found <%= pluralize(@pet.found_days_ago, 'day') %></p>
+<p>Address: <%= @pet.address %></p>
+<p>Species: <%= @pet.species %></p>
+<hr>
+<%= link_to 'Edit', edit_pet_path(@pet), class: 'btn btn-primary' %>
+<%= link_to 'Delete', pet_path(@pet), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+<%= link_to 'Back to all pets', pets_path, class: 'btn btn-outline-secondary' %>
